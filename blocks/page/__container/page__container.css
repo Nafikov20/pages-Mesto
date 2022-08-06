@@ -1,0 +1,22 @@
+.page__container {
+  width: calc(100% - 200px * 2);
+  max-width: 880px;
+  min-width: 282px;
+  min-height: 100vh;
+  margin: 0 auto;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@media screen and (min-width: 600px) {
+  .page__container {
+    align-items: stretch;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .page__container {
+    width: calc(100% - 19px * 2);
+    flex-direction: column;
+  }
+}
