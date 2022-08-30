@@ -10,113 +10,96 @@
 
 <body class="page">
    <div class="page__container">
-      <header class="header">
+
+   <header class="header">
       <img src="./images/header__logo.svg" alt="Место в России." class="header__logo">
-      </header>
+   </header>
       
-      <main class="content">
-         <section class="profile">
+   <main class="content">
+
+      <section class="profile">
          <div class="profile__about">
                <img src="./images/kusto.jpg" alt="Жак-Ив Кусто" class="profile__photo">
                <div class="profile__info">
-                     <div class="profile__description">
-                        <h1 class="profile__name">Жак-Ив Кусто</h1>
-                        <button type="button" class="profile__edit link"></button>
-                     </div>
-                     <p class="profile__job">Исследователь океана</p>
+                  <div class="profile__description">
+                     <h1 class="profile__name">Жак-Ив Кусто</h1>
+                     <button type="button" class="profile__edit link"></button>
+                  </div>
+                  <p class="profile__job">Исследователь океана</p>
                </div>
-            </div>
-            <button type="button" class="profile__add-card link"></button>
-         </section>
-            <ul class="places">
-               <li class="card"> 
-               <img src="./images/kirill-pershin-1556355-unsplash.jpg" alt="Фото крепости в горах" class="card__image">
-               <div class="card__info">
-                  <h2 class="card__name">Карачаевск</h2>
-                  <button type="button" class="card__button-like link"></button>
-               </div>
-               </li>
-               <li class="card">
-               <img src="./images/kirill-pershin-1404681-unsplash.png" alt="Восход солнца" class="card__image">
-               <div class="card__info">
-                  <h2 class="card__name">Гора Эльбрус</h2>
-                  <button type="button" class="card__button-like link"></button>
-               </div>
-               </li>
-               <li class="card">
-               <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Туман в горах" class="card__image">
-               <div class="card__info">
-                  <h2 class="card__name">Домбай</h2>
-                  <button type="button" class="card__button-like link"></button>
-               </div>
-               </li>
-               <li class="card">
-               <img src="./images/kirill-pershin-1404681-unsplash.png" alt="Восход солнца" class="card__image">
-               <div class="card__info">
-                  <h2 class="card__name">Гора Эльбрус</h2>
-                  <button type="button" class="card__button-like link"></button>
-               </div>
-               </li>
-               <li class="card">
-               <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Туман в горах" class="card__image">
-               <div class="card__info">
-                  <h2 class="card__name">Домбай</h2>
-                  <button type="button" class="card__button-like link"></button>
-               </div>
-               </li>
-               <li class="card">
-               <img src="./images/kirill-pershin-1556355-unsplash.jpg" alt="Фото крепости в горах" class="card__image">
-               <div class="card__info">
-                  <h2 class="card__name">Карачаево-Черкесия</h2>
-                  <button type="button" class="card__button-like link"></button>
-               </div>
-               </li>
-            </ul>
-         </main>
-         <footer class="footer">
+         </div>
+         <button type="button" class="profile__add-card link"></button>
+      </section>
+
+         <ul class="places">
+
+
+         </ul>
+      </main>
+
+      <footer class="footer">
          <p class="footer__text">&COPY; 2020 Mesto Russia</p>
-         </footer>
-      <div class="popup">
-            <div class="popup__container">
+      </footer>
+
+      <div class="popup popup_profile">
+         <div class="popup__container">
                <button class="popup__button-close link" type="button"></button>
                <h2 class="popup__title">Редактировать профиль</h2>
-               <form class="popup__form">
-                  <input class="popup__input popup__input_el_name" type="text" name="profile-name" placeholder="Имя">
-                  <input class="popup__input popup__input_el_job" type="text" name="profile-job" placeholder="О себе">
+               <form class="popup__form" novalidate>
+               <div class="popup__form_field">
+                  <input id="name-label" class="popup__input popup__input_el_name" type="text" name="profile-name" placeholder="Имя" minlength="2" maxlength="40" required>
+                  <span id="name-label-error" class="popup__error"></span>
+               </div>
+               <div class="popup__form_field">
+                  <input id="job-label" class="popup__input popup__input_el_job" type="text" name="profile-job" placeholder="О себе" minlength="2" maxlength="200" required>
+                  <span id="job-label-error" class="popup__error"></span>
+               </div>
                   <button class="popup__button-save link" type="submit">Сохранить</button>
                </form>
-            </div>
+         </div>
       </div>
+
       <div class="popup popup_add-card">
          <div class="popup__container popup__container_card">
-            <button class="popup__button-close link" type="button"></button>
-            <h2 class="popup__title">Новое место</h2>
+         <button class="popup__button-close link" type="button"></button>
+         <h2 class="popup__title">Новое место</h2>
             <form class="popup__form">
-               <input class="popup__input popup__input_el_card-name" type="text" name="card-name" placeholder="Название">
-               <input class="popup__input popup__input_el_card-link" type="text" name="card-link" placeholder="Ссылка на картинку">
+               <div class="popup__form_field">
+               <input id="card-name-label" class="popup__input popup__input_el_card-name" type="text" name="card-name" placeholder="Название" minlength="2" maxlength="30" required>
+               <span id="card-name-label-error" class="popup__error"></span>
+               </div>
+               <div class="popup__form_field">
+                  <input id="card-link-label" class="popup__input popup__input_el_card-link" type="url" name="card-link" placeholder="Ссылка на картинку" required>
+                  <span id="card-link-label-error" class="popup__error"></span>
+               </div>
                <button  class="popup__button-save link" type="submit">Создать</button>
             </form>
          </div>
       </div>
+
       <div class="popup popup_open-picture">
-            <div class="popup__container popup__container_picture">
+         <div class="popup__container popup__container_picture">
                <button type="button" class="popup__button-close link"></button>
                <img class="popup__picture" src="#" alt="Картинка">
                <h3 class="popup__description"></h3>
-            </div>
          </div>
       </div>
-      
+
+   </div>
+   
+
       <template id="card-template">
          <li class="card">
-            <button type="button" class="card__button-delete link"></button>
-            <img src="#" alt="Картинка" class="card__image">
-            <div class="card__info">
+         <button type="button" class="card__button-delete link"></button>
+         <img src="#" alt="Картинка" class="card__image">
+         <div class="card__info">
             <h2 class="card__name"></h2>
             <button type="button" class="card__button-like link"></button>
-            </div>
+         </div>
          </li>
       </template>
-<script src="./js/script.js"></script>
+
+   <script src="./js/script.js"></script>
+   <script src="./js/validate.js"></script>
 </body>
 </html>

@@ -4,3 +4,7 @@
     transition: .5s linear;
     cursor: pointer;
 }
+
+.link:not(:hover) {
+   transition: 3s;
+}

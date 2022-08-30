@@ -1,0 +1,7 @@
+.popup__form_field {
+    position: relative;
+    display: block;
+}
+.popup__form_field:last-of-type {
+    margin-bottom: 31px;
+}
